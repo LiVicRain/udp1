@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머 연습</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="clock">
+            <div id="today" class="today"></div>
+            <div id="time" class="time"></div>
+        </div>
+        <div class="img">
+            <img src="./imgs/logo.png" class="logo" alt="우리동네픽 로고">
+        </div>
+        <input type="text" class="item_1" id="name" placeholder="이메일">
+        <input type="text" class="item_1" id="password" placeholder="비밀번호">
+        <button class="item_1" id="login">로그인</button>
+        <button class="item_1" id="join">회원가입</button>
+        <div class="bottomWrap">
+            <span class="checkwrap">
+                <input id="check" type="checkbox">
+                <label for="check">
+                    <span>이메일 저장</span>
+                </label>
+            </span>
+            <span class="textButtonWrap">
+                <button class="textButton" id="findID">이메일 찾기</button>
+                <button class="textButton" id="findPW">비밀번호 찾기</button>
+            </span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
