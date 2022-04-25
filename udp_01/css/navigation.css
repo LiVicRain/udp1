@@ -1,0 +1,38 @@
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.nav-wrapper{
+    min-width: 220px;
+    min-height: 100vh;
+    background-color: #FF8257;
+    padding: 90px 0 0 0;
+    list-style: none;
+}
+.nav-wrapper li{
+    display: flex;
+}
+.nav-menu{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    background-color: #FF8257;
+    padding-left: 20px;
+    border: none;
+    font-size: 1rem;
+    font-family: 나눔고딕, 'NanumGothic', Nanum Gothic, sans-serif;
+    color: white;
+    cursor: pointer;
+}
+i{
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+.nav-menu:hover{
+    background-color: white;
+    color: #FF8257;
+    font-weight: 600;
+}
