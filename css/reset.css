@@ -52,5 +52,6 @@ table {
 /* 개인적인 리셋코드 */
 *{
 	box-sizing: border-box;
+	font-family: 나눔고딕, 'NanumGothic', Nanum Gothic, sans-serif;
 	outline: none; 
 }

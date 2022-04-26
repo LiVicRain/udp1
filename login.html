@@ -9,9 +9,9 @@
     <link rel="shortcut icon" href="img/title_icon2x.ico">
     <!-- 나눔고딕 -->
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/jellycheck.css">
 </head>
 
 <body>
@@ -22,6 +22,7 @@
             <p>깃 허브가 세상을 지배한다</p>
         </div> -->
         <header class="header" role="banner">
+            <!-- <button class="btn-night">나이트 모드</button> -->
             <div class="header-inner">
                 <img src="img/main_logo.svg" class="logo" alt="우리동네픽 로고">
             </div>
@@ -32,24 +33,29 @@
                 <div class="login-wrap">
                     <form class="form-login">
                         <div class="input-row" id="id_line">
-                            <input type="text" name="id" id="id" placeholder="이메일" class="input-text" max="41">
+                            <input type="text" name="id" id="id" placeholder="이메일" class="input-text" max="41" autocomplete="off">
                         </div>
                         <div class="input-row" id="pw_line">
-                            <input type="text" name="pw" id="pw" placeholder="비밀번호" class="input-text" max="16">
+                            <input type="password" name="pw" id="pw" placeholder="비밀번호" class="input-text" max="16">
                             <span role="button" class="btn-eye" id="pw_show">
                                 <span class="icon-eye"></span>
                             </span>
                         </div>
                     </form>
                     <div class="btn-login-wrap">
-                        <button type="submit" class="btn-login" id="log_login">로그인</button>
+                        <button type="submit" class="btn-login" id="btn_login">로그인</button>
                     </div>
-                    <a href="index.html" rel="stylesheet" class="link-join">회원가입</a>
+                    <a href="join.html" rel="stylesheet" class="link-join">회원가입</a>
                     <div class="login-keep-find-wrap">
-                        <span class="login-keep-wrap">
-                            <input id="check" type="checkbox">
-                            <label for="check">이메일 저장</label>
-                        </span>
+                        <form class="login-keep-wrap">
+                            <!-- <input id="keep" type="checkbox">
+                            <label for="keep"><em></em>이메일 저장</label> -->
+                            <label class="jellycheck">
+                                <input type="checkbox" id="keep">
+                                <span class="icon"></span>
+                                <span class="label-text">이메일 저장</span>
+                            </label>
+                        </form>
                         <span class="login-find-wrap">
                             <button class="textButton" id="findID">이메일 찾기</button>
                             <a href=""></a>
@@ -61,7 +67,7 @@
         </div>
         <!-- content -->
     </div>
-    <script src="script/script.js"></script>
+    <script src="script/login.js"></script>
 </body>
 
 </html>
