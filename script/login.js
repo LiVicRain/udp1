@@ -7,7 +7,7 @@ const login = document.getElementById('btn_login')
 const id_Box = document.getElementById('id_line')
 let errStack = 0;
 
-var link = 'index.html'
+var link = 'home.html'
 
 // //getTime 함수
 // function getTime(){
