@@ -9,28 +9,28 @@ let errStack = 0;
 
 var link = 'home.html'
 
-// //getTime 함수
-// function getTime(){
-//     let now = new Date();
-//     let year = now.getFullYear();
-//     let month = now.getMonth() + 1;
-//     let date = now.getDate();
-//     let hour = now.getHours();
-//     let minute = now.getMinutes();
-//     let second = now.getSeconds();
+/* //getTime 함수
+function getTime(){
+    let now = new Date();
+    let year = now.getFullYear();
+    let month = now.getMonth() + 1;
+    let date = now.getDate();
+    let hour = now.getHours();
+    let minute = now.getMinutes();
+    let second = now.getSeconds();
 
-//     month = month < 10 ? `0${month}` : month;
-//     date = date < 10 ? `0${date}` : date;
-//     hour = hour < 10 ? `0${hour}` : hour;
-//     minute = minute < 10 ? `0${minute}` : minute;
-//     second = second < 10 ? `0${second}` : second;
+    month = month < 10 ? `0${month}` : month;
+    date = date < 10 ? `0${date}` : date;
+    hour = hour < 10 ? `0${hour}` : hour;
+    minute = minute < 10 ? `0${minute}` : minute;
+    second = second < 10 ? `0${second}` : second;
 
-//     todayDiv.textContent = `${year}년 ${month}월 ${date}일`
-//     timeDiv.textContent = `${hour}:${minute}:${second}`
-// }
-// getTime();
-// setInterval(getTime,1000);
-// 
+    todayDiv.textContent = `${year}년 ${month}월 ${date}일`
+    timeDiv.textContent = `${hour}:${minute}:${second}`
+}
+getTime();
+setInterval(getTime,1000);
+ */
 // 로그인
 login.addEventListener('click',function(){
     if(id.value == 'tmddntlr@gmail.com'){
@@ -49,12 +49,15 @@ login.addEventListener('click',function(){
         alert('비밀번호를 5회 이상 틀리셨습니다 비밀번호 찾기를 권장드립니다')
     }
 })
-
 // id.addEventListener('focus',function(){
 //     document.getElementById('id_line') += 'focus';
 // })
 
 id.addEventListener('focus',()=>{
-    console.log(id_Box);
-    //
+    console.log(id);
+    console.log(id.value)
 })
+
+function checkValue(){
+    const name = this.getElementById
+}

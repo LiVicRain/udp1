@@ -48,7 +48,7 @@ header{
     border: 1px solid #FF8257;
     outline: 1px solid #FF8257;
 } */
-.input-text{
+[class ^='input-text']{
     all: unset;
     position: relative;
     display: inline-block;
@@ -64,11 +64,7 @@ header{
     font-size: 0.875rem;
     color: #B5B5B5;
 }
-.input-text:focus{
-    border: 1px solid #FF8257;
-    outline: 1px solid #FF8257;
-}
-.input-text::content{
+[class $= 'focus']{
     border: 1px solid #FF8257;
     outline: 1px solid #FF8257;
 }
