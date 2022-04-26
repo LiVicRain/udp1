@@ -1,63 +1,101 @@
 //요소 선택
-const todayDiv = document.getElementById("today");
-const timeDiv = document.getElementById("time");
 const id = document.getElementById('id');
 const pw = document.getElementById('pw');
 const login = document.getElementById('btn_login')
 const id_Box = document.getElementById('id_line')
-let errStack = 0;
+const fail_Box = document.querySelector('.logint-fail-wrap-position');
+const fail = document.querySelector('.login-fail-wrap')
+const eye = document.getElementById('pw_eye')
 
 var link = 'home.html'
 
-/* //getTime 함수
-function getTime(){
-    let now = new Date();
-    let year = now.getFullYear();
-    let month = now.getMonth() + 1;
-    let date = now.getDate();
-    let hour = now.getHours();
-    let minute = now.getMinutes();
-    let second = now.getSeconds();
+let errStack = 0;
+let count = 0;
 
-    month = month < 10 ? `0${month}` : month;
-    date = date < 10 ? `0${date}` : date;
-    hour = hour < 10 ? `0${hour}` : hour;
-    minute = minute < 10 ? `0${minute}` : minute;
-    second = second < 10 ? `0${second}` : second;
-
-    todayDiv.textContent = `${year}년 ${month}월 ${date}일`
-    timeDiv.textContent = `${hour}:${minute}:${second}`
+//요소 만들기
+function createDiv(newClassName, positionClassName) {
+    const newDiv = document.createElement("div");
+    newDiv.className = newClassName;
+    const position = document.querySelector(positionClassName)
+    position.appendChild(newDiv)
 }
-getTime();
-setInterval(getTime,1000);
- */
+function createImg(newClassName, positionClassName, src) {
+    const newImg = document.createElement("img");
+    newImg.className = newClassName;
+    newImg.src = src;
+    const position = document.querySelector(positionClassName)
+    position.appendChild(newImg)
+}
+function createP(newClassName, positionClassName, ment) {
+    const newP = document.createElement("p");
+    newP.className = newClassName;
+    newP.innerHTML = ment;
+    const position = document.querySelector(positionClassName)
+    position.appendChild(newP)
+}
+checkValue();
+
+//에러박스 생성
+function createFailBox() {
+    createDiv('login-fail-wrap', '.logint-fail-wrap-position')
+    createImg('info-red', '.login-fail-wrap', './img/info-white.svg')
+    createP('', '.login-fail-wrap', '아이디(이메일) 또는 비밀번호가<br>일치하지 않습니다.')
+}
+
 // 로그인
-login.addEventListener('click',function(){
+login.addEventListener('click', function () {
+    const fail_Box = document.querySelector('.login-fail-wrap')
     if(id.value == 'tmddntlr@gmail.com'){
-        if(pw.value == '0000'){
-            location.href = link;
+        if(pw.value =='0000'){
+            location.href =link;
         }
-        else{
-            alert('비밀번호를 올바르게 입력하세요');
-            errStack ++;
+        else if(pw.value != '0000' && errStack == 0 ){
+            //fail_Box.remove();
+            createFailBox();
+            errStack++;   
+        }
+        else if(pw.value != '0000'){
+            errStack++;
         }
     }
-    else{
-        alert('존재하지 않는 계정입니다');
-    }
-    if(errStack == 5){
-        alert('비밀번호를 5회 이상 틀리셨습니다 비밀번호 찾기를 권장드립니다')
+    else if(errStack == 0)
+    {
+        //fail_Box.remove();
+        createFailBox();
+        errStack++;
     }
 })
-// id.addEventListener('focus',function(){
-//     document.getElementById('id_line') += 'focus';
-// })
 
-id.addEventListener('focus',()=>{
+/* id.addEventListener('focus',function(){
+    document.getElementById('id_line') += 'focus';
+}) */
+
+/* id.addEventListener('focus',()=>{
     console.log(id);
     console.log(id.value)
-})
+}) */
 
-function checkValue(){
-    const name = this.getElementById
+function checkValue() {
+    const btn = document.getElementById('btn_login')
+    id.value != '' ? id.className = 'input-text activate' : id.className = 'input-text';
+    pw.value != '' ? pw.className = 'input-text activate' : pw.className = 'input-text';
+    if(id.value != '' && pw.value !=''){
+        btn.style.backgroundColor='#FF6532'
+        btn.disabled = false;
+    }
+    else{
+        btn.style.backgroundColor='#F0F0F0'
+        btn.disabled = true;
+    }
 }
+
+eye.addEventListener('click',function(){
+    if(count == 0){
+        pw.setAttribute('type','text')
+        count = 1;
+    }
+    else if(count != 0){
+        pw.setAttribute('type','password')
+        count = 0;
+    }
+})

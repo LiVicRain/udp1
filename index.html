@@ -16,30 +16,29 @@
 
 <body>
     <div class="wrap" id="wrap">
-        <!-- <div class="clock">
-            <div id="today" class="today"></div>
-            <div id="time" class="time"></div>
-            <p>깃 허브가 세상을 지배한다</p>
-        </div> -->
         <header class="header" role="banner">
             <!-- <button class="btn-night">나이트 모드</button> -->
             <div class="header-inner">
-                <img src="img/main_logo.svg" class="logo" alt="우리동네픽 로고">
+                <img src="img/main-logo.svg" class="logo" alt="우리동네픽 로고">
             </div>
         </header>
         <div class="container" id="container">
             <!-- content -->
             <div class="content">
                 <div class="login-wrap">
+                    <div class="logint-fail-wrap-position"></div>
+                    <!-- <div class="login-fail-wrap">
+                        <img class="info-red" src="./img/info-white.svg" alt="info-red">
+                        <p>아이디(이메일) 또는 비밀번호가<br/>일치하지 않습니다.</p>
+                    </div> -->
                     <form class="form-login">
                         <div class="input-row" id="id_line">
                             <input type="text" name="id" id="id" placeholder="이메일" class="input-text" max="41" autocomplete="off" onkeyup="checkValue()">
+                            <!-- <p class="fail-text">이메일을 올바르게 입력해주세요</p> -->
                         </div>
                         <div class="input-row" id="pw_line">
                             <input type="password" name="pw" id="pw" placeholder="비밀번호" class="input-text" max="16" onkeyup="checkValue()">
-                            <span role="button" class="btn-eye" id="pw_show">
-                                <span class="icon-eye"></span>
-                            </span>
+                            <img class="pw-eye" src="./img/pw_eye.svg" alt="eye-icon" id="pw_eye">
                         </div>
                     </form>
                     <div class="btn-login-wrap">
