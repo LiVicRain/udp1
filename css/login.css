@@ -1,9 +1,9 @@
-.content{
-    font-family: 나눔고딕, 'NanumGothic', Nanum Gothic, sans-serif;
-}
 .wrap{
     position: relative;
     height: 100%;
+}
+.content{
+    font-family: 나눔고딕, 'NanumGothic', Nanum Gothic, sans-serif;
 }
 header{
     display: block;
